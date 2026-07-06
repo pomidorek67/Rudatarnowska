@@ -5,7 +5,6 @@
 
 const images = [
     "IMG_0076-compressed.jpeg",
-       "IMG_0076-compressed.jpeg",
     "IMG_1774-compressed.jpeg",
     "IMG_2565-compressed.jpeg",
     "IMG_2669-compressed.jpeg",
