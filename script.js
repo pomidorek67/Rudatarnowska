@@ -4,21 +4,21 @@
 ========================= */
 
 const images = [
-    "IMG_0076.jpeg",
-    "IMG_1774.jpeg",
-    "IMG_2565.jpeg",
-    "IMG_2669.jpeg",
-    "IMG_2779.jpeg",
-    "IMG_3011.jpeg",
-    "IMG_3263.jpeg",
-    "IMG_3297.jpeg",
-    "IMG_3493.jpeg",
-    "IMG_3497.jpeg",
-    "IMG_5092.jpeg",
-    "IMG_5082.jpeg",
-    "IMG_8285.jpeg",
-    "IMG_9530.jpeg",
-    "IMG_9551.jpeg",
+    "IMG_0076-compressed.jpeg",
+       "IMG_0076-compressed.jpeg",
+    "IMG_1774-compressed.jpeg",
+    "IMG_2565-compressed.jpeg",
+    "IMG_2669-compressed.jpeg",
+    "IMG_2779-compressed.jpeg",
+    "IMG_3011-compressed.jpeg",
+    "IMG_3263-compressed.jpeg",
+    "IMG_3297-compressed.jpeg",
+    "IMG_3493-compressed.jpeg",
+    "IMG_3497-compressed.jpeg",
+    "IMG_5082-compressed.jpeg",
+    "IMG_5095-compressed.jpeg",
+    "IMG_8285-compressed.jpeg",
+    "IMG_9551-compressed.jpeg",
   
 ];
 
