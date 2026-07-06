@@ -1,103 +1,188 @@
+```html
 <!DOCTYPE html>
-
 <html lang="pl">
-
 <head>
+<meta charset="UTF-8">
+<title>Strona z muzyką</title>
 
-    <meta charset="UTF-8">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    color:white;
+    background:url("tlo1.jpg") center center/cover no-repeat;
+}
 
-    <title>Ruda Tarnowska</title>
+h1{
+    font-size:60px;
+    text-shadow:0 0 15px black;
+}
 
-    <style>
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(6px);
 
-        body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-            font-family: Arial, sans-serif;
+    animation:fadeIn .8s ease;
+}
 
-            background-color: #f4f4f4;
+.popup{
 
-            margin: 0;
+    width:360px;
+    background:white;
+    color:#222;
+    border-radius:18px;
+    overflow:hidden;
 
-            padding: 40px;
+    text-align:center;
 
-        }
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
 
-        .container {
+    animation:popup .8s ease;
+}
 
-            max-width: 900px;
+.popup img{
+    width:100%;
+    display:block;
+}
 
-            margin: auto;
+.popup h2{
+    margin-top:15px;
+}
 
-            background: white;
+.popup p{
+    margin:15px;
+    color:#555;
+}
 
-            padding: 30px;
+.popup button{
 
-            border-radius: 10px;
+    margin-bottom:20px;
 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding:12px 30px;
 
-        }
+    border:none;
 
-        h1 {
+    border-radius:10px;
 
-            text-align: center;
+    font-size:18px;
 
-            color: #2c3e50;
+    cursor:pointer;
 
-        }
+    background:#4CAF50;
 
-        p {
+    color:white;
 
-            font-size: 18px;
+    transition:.3s;
+}
 
-            line-height: 1.7;
+.popup button:hover{
 
-            text-align: justify;
+    transform:scale(1.08);
 
-        }
+}
 
-    </style>
+.hide{
+
+    animation:fadeOut .6s forwards;
+
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:scale(.6);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes fadeOut{
+
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+</style>
 
 </head>
 
 <body>
 
-    <div class="container">
+<h1>Witaj na mojej stronie!</h1>
 
-        <h1>Ruda Tarnowska</h1>
+<div id="overlay">
 
-        <p>
+    <div class="popup">
 
-            Ruda Tarnowska to szlacheckie imperium położone przed Łachą.
+        <img src="https://tenor.com/pl/view/angry-birds-hearing-red-hyperbaiter-angry-birds-peak-gif-13184220130857881670">
 
-            Za dnia cieszy oko pięknymi widokami niesamowitych krajobrazów.
+        <h2>Witaj!</h2>
 
-            Po zmroku zaś trzeba spodziewać się niespodziewanego.
+        <p>Kliknij przycisk poniżej, aby rozpocząć.</p>
 
-            Legenda głosi, że pod osłoną nocy szemranymi drogami podąża chłop
-
-            w kapeluszu. Nikt nie wie czego szuka (prawdopodobnie guza).
-
-            Mieszkańcy mają między sobą różne relacje – od kłótni po wspólne
-
-            imprezy. Mijają dni i mijają lata, a infrastruktura maleńkimi
-
-            kroczkami dostaje dodatkowe ulepszenia. Dzięki jej modernizacji
-
-            społeczność może cieszyć się poprawą jakości nawierzchni drogowej
-
-            czy też budynkiem pożytku publicznego, jakim została świetlica.
-
-            Ruda Tarnowska to miejsce, gdzie można doświadczyć wielu emocji
-
-            i chwil zarówno pięknych, jak też i tych mniej przyjemnych.
-
-        </p>
+        <button onclick="startMusic()">
+            ▶ Włącz muzykę
+        </button>
 
     </div>
 
-</body>
+</div>
 
+<audio id="music" loop>
+    <source src="https://www.youtube.com/watch?v=8GYL6c_GTE0" type="audio/mpeg">
+</audio>
+
+<script>
+
+function startMusic(){
+
+    document.getElementById("music").play();
+
+    document.getElementById("overlay").classList.add("hide");
+
+    setTimeout(()=>{
+        document.getElementById("overlay").remove();
+    },600);
+
+}
+
+</script>
+
+</body>
 </html>
+```
+
