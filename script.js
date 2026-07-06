@@ -63,10 +63,16 @@ function typeText() {
 const videoID = "8GYL6c_GTE0";
 
 function startMusic() {
-    document.getElementById("ytplayer").src =
-        `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`;
 
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById("ytplayer").src =
+        "https://www.youtube.com/embed/8GYL6c_GTE0?autoplay=1&loop=1&playlist=8GYL6c_GTE0";
+
+    const overlay = document.getElementById("overlay");
+    overlay.style.opacity = "0";
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 600);
 }
 
 /* =========================
