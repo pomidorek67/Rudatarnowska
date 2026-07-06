@@ -2,160 +2,202 @@
    PODSTAWY
 ========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Georgia, serif;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: black;
-    color: white;
-    cursor: url("img/miecz.cur"), auto;
+body{
+    min-height:100vh;
+    font-family:Georgia,serif;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:#000;
+    color:white;
+    cursor:url("img/miecz.cur"),auto;
 }
 
 /* =========================
-   TŁO (SLIDER)
+   TŁO
 ========================= */
 
 #background{
+    position:fixed;
+    inset:0;
+    background:url("IMG_2779-compressed.jpeg") center center/cover no-repeat;
+    filter:brightness(.35);
+    z-index:-2;
+}
 
+/* =========================
+   ISKRY
+========================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* =========================
+   EKRAN POWITALNY
+========================= */
+
+#overlay{
     position:fixed;
     inset:0;
 
-    background:url("IMG_2779-compressed.jpeg") center center/cover no-repeat;
+    background:rgba(0,0,0,.88);
 
-    filter:brightness(.35);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    z-index:-2;
+    backdrop-filter:blur(6px);
+
+    z-index:9999;
+}
+
+.popup{
+
+    width:min(420px,90%);
+
+    background:rgba(20,20,20,.96);
+
+    border:2px solid gold;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 0 40px rgba(0,0,0,.8);
+
+    animation:popupIn .8s ease;
+
+}
+
+@keyframes popupIn{
+
+    from{
+        opacity:0;
+        transform:scale(.75);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 
 }
 
 /* =========================
-   MGŁA
+   TYTUŁ POWITALNY
 ========================= */
 
+#typing{
 
+    color:gold;
 
-@keyframes fogMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-200px); }
-}
+    font-size:28px;
 
-/* =========================
-   ISKRY (canvas)
-========================= */
+    margin-bottom:20px;
 
-#particles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-}
+    min-height:40px;
 
-/* =========================
-   OVERLAY (START)
-========================= */
-
-#overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.popup {
-   max-height: 90vh;
-    overflow-y: auto;
-    width: 420px;
-    background: rgba(20,20,20,0.95);
-    border: 2px solid gold;
-    border-radius: 15px;
-    text-align: center;
-    padding-bottom: 20px;
-    animation: popupIn 1s ease;
-}
-
-@keyframes popupIn {
-    from { transform: scale(0.6); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.popup img {
-    width: 100%;
-    border-bottom: 2px solid gold;
-}
-
-/* =========================
-   TYTUŁ (TYPING)
-========================= */
-
-#typing {
-    margin-top: 15px;
-    font-size: 24px;
-    color: gold;
-    min-height: 30px;
 }
 
 /* =========================
    CYTAT
 ========================= */
 
-.quote {
-    font-style: italic;
-    color: #ccc;
-    margin: 10px;
+.quote{
+
+    color:#ddd;
+
+    font-style:italic;
+
+    line-height:1.6;
+
 }
 
 /* =========================
    PRZYCISK
 ========================= */
 
-#enterButton {
-    margin-top: 15px;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    background: gold;
-    color: black;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
+#enterButton{
+
+    margin-top:25px;
+
+    padding:14px 30px;
+
+    font-size:18px;
+
+    background:linear-gradient(#d6b300,#ffd700);
+
+    color:#111;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-#enterButton:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px gold;
+#enterButton:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px gold;
+
 }
 
 /* =========================
-   GŁÓWNA TREŚĆ
+   GŁÓWNA ZAWARTOŚĆ
 ========================= */
 
-main {
-   position: relative;
-    z-index: 2;
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 20px;
+main{
+
+    position:relative;
+
+    z-index:2;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:60px 20px;
+
 }
 
-.container {
+.container{
+
     width:100%;
+
     max-width:950px;
+
 }
 
-.title {
+/* =========================
+   TYTUŁ
+========================= */
+
+.title{
+
     display:inline-block;
 
     font-size:46px;
@@ -166,21 +208,21 @@ main {
 
     padding:15px 35px;
 
-    border:2px solid rgba(255,215,0,.6);
+    border:2px solid rgba(255,215,0,.7);
 
     border-radius:15px;
 
     text-shadow:0 0 15px black;
 
-    margin-bottom:25px;
+    margin-bottom:30px;
+
 }
 
-.description {
-      font-size:20px;
+/* =========================
+   OPIS
+========================= */
 
-    line-height:1.8;
-
-    color:#f1f1f1;
+.description{
 
     background:rgba(0,0,0,.75);
 
@@ -188,72 +230,93 @@ main {
 
     border-radius:15px;
 
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+
     box-shadow:0 0 20px rgba(0,0,0,.6);
+
 }
 
 /* =========================
-   MUZYKA (ukryta)
+   GALERIA
 ========================= */
-
-#youtubePlayer {
-    position: fixed;
-    left: -9999px;
-    top: -9999px;
-}
-
-/* ==========================
-   GALERIA ZDJĘĆ
-========================== */
 
 .gallery{
 
     width:100%;
-    max-width:850px;
 
-    margin:30px auto 0;
+    max-width:900px;
 
-    border:3px solid rgba(255,215,0,.7);
+    margin:40px auto;
 
-    border-radius:15px;
+    border:3px solid rgba(255,215,0,.8);
+
+    border-radius:18px;
 
     overflow:hidden;
 
-    box-shadow:0 0 25px rgba(0,0,0,.7);
-
     background:#111;
+
+    box-shadow:0 0 35px rgba(0,0,0,.8);
 
 }
 
 #slideshow{
 
-     width:100%;
+    width:100%;
 
     height:500px;
 
     display:block;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    transition:opacity 1s ease;
+    background:#111;
+
+    transition:opacity .8s ease;
 
 }
 
-/* ==========================
-   TELEFONY
-========================== */
+/* =========================
+   YOUTUBE
+========================= */
 
-@media (max-width:768px){
+#youtubePlayer{
+
+    position:fixed;
+
+    left:-9999px;
+
+    top:-9999px;
+
+}
+
+/* =========================
+   TELEFONY
+========================= */
+
+@media(max-width:768px){
+
+    body{
+
+        cursor:auto;
+
+    }
 
     .popup{
 
         width:92%;
-        margin:15px;
+
+        padding:25px;
 
     }
 
     #typing{
 
-        font-size:20px;
+        font-size:22px;
 
     }
 
@@ -269,7 +332,7 @@ main {
 
         font-size:16px;
 
-        line-height:1.6;
+        line-height:1.7;
 
         padding:18px;
 
@@ -277,7 +340,13 @@ main {
 
     #slideshow{
 
-        height:240px;
+        height:250px;
+
+    }
+
+    main{
+
+        padding:30px 15px;
 
     }
 
