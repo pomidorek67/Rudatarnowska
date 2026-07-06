@@ -1,38 +1,54 @@
-/* ======================================
-   KRONIKI RUDY TARNOWSKIEJ
-====================================== */
+/* ==========================================
 
+   KRONIKI RUDY TARNOWSKIEJ
+
+   SCRIPT.JS - CZĘŚĆ 1
+
+========================================== */
 
 /* =========================
-   ZDJĘCIA
+
+   SLIDESHOW
+
 ========================= */
 
 const images = [
+
     "IMG_0076-compressed.jpeg",
+
     "IMG_1774-compressed.jpeg",
+
     "IMG_2565-compressed.jpeg",
+
     "IMG_2779-compressed.jpeg",
+
     "IMG_3011-compressed.jpeg",
+
     "IMG_3263-compressed.jpeg",
+
     "IMG_3297-compressed.jpeg",
+
     "IMG_3493-compressed.jpeg",
+
     "IMG_3497-compressed.jpeg",
+
     "IMG_5082-compressed.jpeg",
+
     "IMG_5095-compressed.jpeg",
+
     "IMG_8285-compressed.jpeg",
+
     "IMG_9551-compressed.jpeg"
+
 ];
 
-let currentImage = 0;
+let current = 0;
 
-
-/* =========================
-   SLIDESHOW
-========================= */
+let slide = null;
 
 function startSlideshow(){
 
-    const slide = document.getElementById("slideshow");
+    slide = document.getElementById("slideshow");
 
     if(!slide) return;
 
@@ -42,30 +58,33 @@ function startSlideshow(){
 
         setTimeout(()=>{
 
-            currentImage++;
+            current++;
 
-            if(currentImage >= images.length){
-                currentImage = 0;
+            if(current >= images.length){
+
+                current = 0;
+
             }
 
-            slide.src = images[currentImage];
+            slide.src = images[current];
 
             slide.style.opacity = 1;
 
-        },500);
+        },600);
 
     },3000);
 
 }
 
-
 /* =========================
-   EFEKT PISANIA
+
+   TEKST (TYPING EFFECT)
+
 ========================= */
 
-const titleText = "KRONIKI RUDY TARNOWSKIEJ";
+const text = "KRONIKI RUDY TARNOWSKIEJ";
 
-let letter = 0;
+let i = 0;
 
 function typeText(){
 
@@ -73,11 +92,11 @@ function typeText(){
 
     if(!typing) return;
 
-    if(letter < titleText.length){
+    if(i < text.length){
 
-        typing.innerHTML += titleText.charAt(letter);
+        typing.innerHTML += text[i];
 
-        letter++;
+        i++;
 
         setTimeout(typeText,80);
 
@@ -85,9 +104,10 @@ function typeText(){
 
 }
 
-
 /* =========================
-   MUZYKA
+
+   MUZYKA (YOUTUBE)
+
 ========================= */
 
 const videoID = "8GYL6c_GTE0";
@@ -96,41 +116,17 @@ function startMusic(){
 
     const player = document.getElementById("ytplayer");
 
-    if(player){
+    if(!player) return;
 
-        player.src =
-        `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`;
+    player.src =
 
-    }
-
-}
-
-
-/* =========================
-   WEJŚCIE
-========================= */
-
-function enterVillage(){
-
-    startMusic();
-
-    const overlay = document.getElementById("overlay");
-
-    overlay.style.transition = ".8s";
-
-    overlay.style.opacity = "0";
-
-    setTimeout(()=>{
-
-        overlay.style.display="none";
-
-    },800);
+    `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`;
 
 }
-
-
 /* =========================
-   ISKRY
+
+   EFEKT ISKIER
+
 ========================= */
 
 function startParticles(){
@@ -144,71 +140,107 @@ function startParticles(){
     function resize(){
 
         canvas.width = window.innerWidth;
+
         canvas.height = window.innerHeight;
 
     }
 
     resize();
 
-    window.addEventListener("resize",resize);
+    window.addEventListener("resize", resize);
 
-    const particles=[];
+    const particles = [];
 
-    for(let i=0;i<80;i++){
+    for(let i = 0; i < 120; i++){
 
         particles.push({
 
-            x:Math.random()*canvas.width,
+            x: Math.random()*canvas.width,
 
-            y:Math.random()*canvas.height,
+            y: Math.random()*canvas.height,
 
-            r:Math.random()*2+1,
+            vx: (Math.random()-0.5)*0.4,
 
-            vx:(Math.random()-0.5)*0.4,
+            vy: -(Math.random()*0.8+0.2),
 
-            vy:-Math.random()*0.6-0.2
+            size: Math.random()*3+1,
+
+            alpha: Math.random()*0.5+0.5
 
         });
 
     }
 
-    function draw(){
+    function animate(){
 
         ctx.clearRect(0,0,canvas.width,canvas.height);
 
         particles.forEach(p=>{
 
-            p.x+=p.vx;
-            p.y+=p.vy;
+            p.x += p.vx;
 
-            if(p.y<0){
+            p.y += p.vy;
 
-                p.y=canvas.height;
-                p.x=Math.random()*canvas.width;
+            if(p.y < -10){
+
+                p.y = canvas.height+10;
+
+                p.x = Math.random()*canvas.width;
 
             }
 
+            if(p.x < -20) p.x = canvas.width;
+
+            if(p.x > canvas.width+20) p.x = 0;
+
             ctx.beginPath();
 
-            ctx.fillStyle="rgba(255,215,0,.8)";
+            ctx.fillStyle=`rgba(255,215,80,${p.alpha})`;
 
-            ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.shadowColor="gold";
+
+            ctx.shadowBlur=12;
+
+            ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 
             ctx.fill();
 
         });
 
-        requestAnimationFrame(draw);
+        requestAnimationFrame(animate);
 
     }
 
-    draw();
+    animate();
 
 }
 
+/* =========================
+
+   WEJŚCIE
+
+========================= */
+
+function enterVillage(){
+
+    startMusic();
+
+    const overlay = document.getElementById("overlay");
+
+    overlay.style.opacity = "0";
+
+    setTimeout(()=>{
+
+        overlay.style.display = "none";
+
+    },800);
+
+}
 
 /* =========================
-   START
+
+   START STRONY
+
 ========================= */
 
 window.addEventListener("load",()=>{
@@ -219,7 +251,7 @@ window.addEventListener("load",()=>{
 
     startParticles();
 
-    const button = document.getElementById("enterButton");
+    const button=document.getElementById("enterButton");
 
     if(button){
 
@@ -228,3 +260,5 @@ window.addEventListener("load",()=>{
     }
 
 });
+
+
