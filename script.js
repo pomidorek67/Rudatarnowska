@@ -4,7 +4,7 @@
 ========================= */
 
 const images = [
-    "img/zdjecie1.jpg",
+    "IMG_5082.jpeg",
     "img/zdjecie2.jpg",
     "img/zdjecie3.jpg",
     "img/zdjecie4.jpg",
