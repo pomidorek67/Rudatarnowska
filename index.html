@@ -1,36 +1,38 @@
 
-<!DOCTYPE html>
-<html lang="pl">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kroniki Rudy Tarnowskiej</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- Tło -->
+    <!-- Statyczne tło -->
     <div id="background"></div>
 
-    
+    <!-- Mgła -->
+    <div id="fog"></div>
 
     <!-- Iskry -->
     <canvas id="particles"></canvas>
 
-    <!-- Ekran powitalny -->
+    <!-- ==========================
+         EKRAN POWITALNY
+    =========================== -->
+
     <div id="overlay">
 
         <div class="popup">
 
-            
-
             <h1 id="typing"></h1>
 
             <p class="quote">
-                "Każda wieś skrywa swoje tajemnice..."
+                „Każda wieś skrywa swoje tajemnice...”
             </p>
 
             <button id="enterButton">
@@ -41,66 +43,95 @@
 
     </div>
 
-    <!-- Główna zawartość -->
+    <!-- ==========================
+         GŁÓWNA STRONA
+    =========================== -->
 
     <main>
 
-        <div class="container">
+        <section class="container">
 
             <h1 class="title">
+
+                <span class="sword">⚔</span>
+
                 KRONIKI RUDY TARNOWSKIEJ
+
+                <span class="sword">⚔</span>
+
             </h1>
 
-            <p class="description">
+            <div class="description">
 
-                Ruda Tarnowska to szlacheckie imperium położone przed Łachą.
+                <p>
 
-                Za dnia cieszy oko pięknymi widokami niesamowitych krajobrazów.
+                    Ruda Tarnowska to szlacheckie imperium położone przed Łachą.
 
-                Po zmroku zaś trzeba spodziewać się niespodziewanego.
+                    Za dnia cieszy oko pięknymi widokami niesamowitych krajobrazów.
 
-                Mieszkańcy mają między sobą różne relacje – od kłótni po wspólne
-                imprezy.
+                    Po zmroku zaś trzeba spodziewać się niespodziewanego.
 
-                Mijają dni i mijają lata, a infrastruktura maleńkimi kroczkami
-                dostaje dodatkowe ulepszenia.
+                    Mieszkańcy mają między sobą różne relacje – od kłótni po wspólne imprezy.
 
-                Dzięki jej modernizacji społeczność może cieszyć się poprawą jakości
-                nawierzchni drogowej czy też budynkiem pożytku publicznego,
-                jakim została świetlica.
+                    Mijają dni i mijają lata, a infrastruktura maleńkimi kroczkami dostaje kolejne ulepszenia.
 
-                Ruda Tarnowska to miejsce, gdzie można doświadczyć wielu emocji
-                i chwil zarówno pięknych, jak i tych mniej przyjemnych.
+                    Dzięki jej modernizacji społeczność może cieszyć się poprawą jakości nawierzchni drogowej,
 
-            </p>
+                    czy też budynkiem pożytku publicznego, jakim została świetlica.
+
+                    Ruda Tarnowska to miejsce, gdzie można doświadczyć wielu emocji
+
+                    i chwil zarówno pięknych, jak i tych mniej przyjemnych.
+
+                </p>
+
+            </div>
+
+            <!-- Galeria -->
+
             <div class="gallery">
 
-    <img id="slideshow" src="IMG_0076-compressed.jpeg" alt="Zdjęcia Rudy Tarnowskiej">
+                <img
+                    id="slideshow"
+                    src="IMG_0076-compressed.jpeg"
+                    alt="Galeria Rudy Tarnowskiej">
 
-</div>
+            </div>
 
-        </div>
+        </section>
 
     </main>
 
-    <!-- Odtwarzacz YouTube -->
+    <!-- ==========================
+         MUZYKA
+    =========================== -->
+
     <div id="youtubePlayer">
 
         <iframe
+
             id="ytplayer"
+
             width="1"
+
             height="1"
+
             src=""
-            frameborder="0"
+
+            title="YouTube player"
+
             allow="autoplay"
+
             allowfullscreen>
+
         </iframe>
 
     </div>
+
+    <!-- JavaScript -->
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-```
