@@ -1,0 +1,180 @@
+/* =========================
+   PODSTAWY
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: Georgia, serif;
+    overflow: hidden;
+    background: black;
+    color: white;
+    cursor: url("img/miecz.cur"), auto;
+}
+
+/* =========================
+   TŁO (SLIDER)
+========================= */
+
+#background {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) contrast(1.1);
+    transition: opacity 1.5s ease;
+}
+
+/* =========================
+   MGŁA
+========================= */
+
+.fog {
+    position: fixed;
+    inset: 0;
+    background: url("https://i.imgur.com/3Xj7Q9V.png");
+    opacity: 0.15;
+    animation: fogMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fogMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200px); }
+}
+
+/* =========================
+   ISKRY (canvas)
+========================= */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* =========================
+   OVERLAY (START)
+========================= */
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup {
+    width: 420px;
+    background: rgba(20,20,20,0.95);
+    border: 2px solid gold;
+    border-radius: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+    animation: popupIn 1s ease;
+}
+
+@keyframes popupIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.popup img {
+    width: 100%;
+    border-bottom: 2px solid gold;
+}
+
+/* =========================
+   TYTUŁ (TYPING)
+========================= */
+
+#typing {
+    margin-top: 15px;
+    font-size: 24px;
+    color: gold;
+    min-height: 30px;
+}
+
+/* =========================
+   CYTAT
+========================= */
+
+.quote {
+    font-style: italic;
+    color: #ccc;
+    margin: 10px;
+}
+
+/* =========================
+   PRZYCISK
+========================= */
+
+#enterButton {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    background: gold;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#enterButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gold;
+}
+
+/* =========================
+   GŁÓWNA TREŚĆ
+========================= */
+
+main {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.title {
+    font-size: 42px;
+    color: gold;
+    text-shadow: 0 0 15px black;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* =========================
+   MUZYKA (ukryta)
+========================= */
+
+#youtubePlayer {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+}
