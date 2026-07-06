@@ -5,20 +5,20 @@
 
 const images = [
     "IMG_5082.jpeg",
-    "img/zdjecie2.jpg",
-    "img/zdjecie3.jpg",
-    "img/zdjecie4.jpg",
-    "img/zdjecie5.jpg",
-    "img/zdjecie6.jpg",
-    "img/zdjecie7.jpg",
-    "img/zdjecie8.jpg",
-    "img/zdjecie9.jpg",
-    "img/zdjecie10.jpg",
-    "img/zdjecie11.jpg",
-    "img/zdjecie12.jpg",
-    "img/zdjecie13.jpg",
-    "img/zdjecie14.jpg",
-    "img/zdjecie15.jpg"
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
+    "IMG_5082.jpeg",
 ];
 
 let index = 0;
