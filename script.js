@@ -8,7 +8,7 @@ const images = [
  "IMG_0076-compressed.jpeg",
     "IMG_1774-compressed.jpeg",
     "IMG_2565-compressed.jpeg",
-    "IMG_2669-compressed.jpeg",
+   // "IMG_2669-compressed.jpeg",
     "IMG_2779-compressed.jpeg",
     "IMG_3011-compressed.jpeg",
     "IMG_3263-compressed.jpeg",
