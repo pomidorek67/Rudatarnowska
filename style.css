@@ -73,6 +73,8 @@ body {
 }
 
 .popup {
+   max-height: 90vh;
+    overflow-y: auto;
     width: 420px;
     background: rgba(20,20,20,0.95);
     border: 2px solid gold;
