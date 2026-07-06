@@ -1,148 +1,232 @@
-/* =========================
-   PODSTAWY
-========================= */
+/* ==========================================
+
+   KRONIKI RUDY TARNOWSKIEJ
+
+   STYLE.CSS
+
+========================================== */
+
+/* ===== RESET ===== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
 body{
+
     min-height:100vh;
-    font-family:Georgia,serif;
+
     overflow-x:hidden;
-    overflow-y:auto;
+
     background:#000;
-    color:white;
-    cursor:url("img/miecz.cur"),auto;
+
+    color:#fff;
+
+    font-family:Georgia,serif;
+
 }
 
-/* =========================
-   TŁO
-========================= */
+/* ===== TŁO ===== */
 
 #background{
+
     position:fixed;
+
     inset:0;
-    background:url("IMG_2779-compressed.jpeg") center center/cover no-repeat;
-    filter:brightness(.35);
-    z-index:-2;
+
+    background:url("IMG_2779-compressed.jpeg")
+
+    center center/cover no-repeat;
+
+    filter:brightness(.32);
+
+    z-index:-3;
+
 }
 
-/* =========================
-   ISKRY
-========================= */
+/* ===== MGŁA ===== */
+
+#fog{
+
+    position:fixed;
+
+    inset:-20%;
+
+    background:
+
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.05),transparent 35%),
+
+    radial-gradient(circle at 80% 60%,rgba(255,255,255,.05),transparent 40%),
+
+    radial-gradient(circle at 40% 80%,rgba(255,255,255,.04),transparent 35%);
+
+    animation:fogMove 35s linear infinite;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+@keyframes fogMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-180px);
+
+    }
+
+}
+
+/* ===== ISKRY ===== */
 
 #particles{
+
     position:fixed;
+
     inset:0;
+
+    width:100%;
+
+    height:100%;
+
     pointer-events:none;
+
     z-index:1;
+
 }
 
-/* =========================
-   EKRAN POWITALNY
-========================= */
+/* ===== EKRAN POWITALNY ===== */
 
 #overlay{
+
     position:fixed;
+
     inset:0;
 
     background:rgba(0,0,0,.88);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     backdrop-filter:blur(6px);
 
-    z-index:9999;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+    transition:.8s;
+
 }
 
 .popup{
 
-    width:min(420px,90%);
+    width:min(430px,92%);
 
-    background:rgba(20,20,20,.96);
+    padding:35px;
 
-    border:2px solid gold;
+    background:rgba(15,15,15,.95);
 
-    border-radius:18px;
+    border:2px solid rgba(255,215,0,.8);
 
-    padding:30px;
+    border-radius:20px;
 
     text-align:center;
 
-    box-shadow:0 0 40px rgba(0,0,0,.8);
+    box-shadow:
 
-    animation:popupIn .8s ease;
+    0 0 30px rgba(0,0,0,.8),
+
+    0 0 15px rgba(255,215,0,.2);
+
+    animation:popupShow .8s ease;
 
 }
 
-@keyframes popupIn{
+@keyframes popupShow{
 
     from{
-        opacity:0;
+
         transform:scale(.75);
+
+        opacity:0;
+
     }
 
     to{
-        opacity:1;
+
         transform:scale(1);
+
+        opacity:1;
+
     }
 
 }
 
-/* =========================
-   TYTUŁ POWITALNY
-========================= */
+/* ===== POWITANIE ===== */
 
 #typing{
 
     color:gold;
 
-    font-size:28px;
+    font-size:30px;
 
     margin-bottom:20px;
+
+    text-shadow:0 0 12px gold;
 
     min-height:40px;
 
 }
 
-/* =========================
-   CYTAT
-========================= */
-
 .quote{
 
     color:#ddd;
 
-    font-style:italic;
+    line-height:1.8;
 
-    line-height:1.6;
+    font-style:italic;
 
 }
 
-/* =========================
-   PRZYCISK
-========================= */
+/* ===== PRZYCISK ===== */
 
 #enterButton{
 
-    margin-top:25px;
+    margin-top:28px;
 
-    padding:14px 30px;
-
-    font-size:18px;
-
-    background:linear-gradient(#d6b300,#ffd700);
-
-    color:#111;
+    padding:15px 28px;
 
     border:none;
 
     border-radius:10px;
+
+    background:linear-gradient(#caa300,#ffd700);
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
@@ -157,10 +241,11 @@ body{
     box-shadow:0 0 25px gold;
 
 }
+/* ==========================================
 
-/* =========================
-   GŁÓWNA ZAWARTOŚĆ
-========================= */
+   GŁÓWNA TREŚĆ
+
+========================================== */
 
 main{
 
@@ -192,9 +277,7 @@ main{
 
 }
 
-/* =========================
-   TYTUŁ
-========================= */
+/* ===== TYTUŁ ===== */
 
 .title{
 
@@ -204,25 +287,29 @@ main{
 
     color:gold;
 
-    background:rgba(0,0,0,.65);
+    text-shadow:0 0 18px black;
 
-    padding:15px 35px;
+    background:rgba(0,0,0,.6);
 
-    border:2px solid rgba(255,215,0,.7);
+    padding:15px 30px;
+
+    border:1px solid rgba(255,215,0,.6);
 
     border-radius:15px;
-
-    text-shadow:0 0 15px black;
 
     margin-bottom:30px;
 
 }
 
-/* =========================
-   OPIS
-========================= */
+/* ===== OPIS ===== */
 
 .description{
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
 
     background:rgba(0,0,0,.75);
 
@@ -230,19 +317,11 @@ main{
 
     border-radius:15px;
 
-    font-size:20px;
-
-    line-height:1.8;
-
-    color:#f2f2f2;
-
-    box-shadow:0 0 20px rgba(0,0,0,.6);
+    box-shadow:0 0 25px rgba(0,0,0,.6);
 
 }
 
-/* =========================
-   GALERIA
-========================= */
+/* ===== GALERIA ===== */
 
 .gallery{
 
@@ -252,7 +331,7 @@ main{
 
     margin:40px auto;
 
-    border:3px solid rgba(255,215,0,.8);
+    border:2px solid rgba(255,215,0,.7);
 
     border-radius:18px;
 
@@ -260,7 +339,7 @@ main{
 
     background:#111;
 
-    box-shadow:0 0 35px rgba(0,0,0,.8);
+    box-shadow:0 0 30px rgba(0,0,0,.8);
 
 }
 
@@ -268,9 +347,7 @@ main{
 
     width:100%;
 
-    height:500px;
-
-    display:block;
+    height:520px;
 
     object-fit:contain;
 
@@ -280,9 +357,7 @@ main{
 
 }
 
-/* =========================
-   YOUTUBE
-========================= */
+/* ===== MUZYKA ===== */
 
 #youtubePlayer{
 
@@ -294,25 +369,13 @@ main{
 
 }
 
-/* =========================
-   TELEFONY
-========================= */
+/* ==========================================
+
+   TELEFON
+
+========================================== */
 
 @media(max-width:768px){
-
-    body{
-
-        cursor:auto;
-
-    }
-
-    .popup{
-
-        width:92%;
-
-        padding:25px;
-
-    }
 
     #typing{
 
@@ -332,21 +395,21 @@ main{
 
         font-size:16px;
 
-        line-height:1.7;
-
         padding:18px;
 
     }
 
     #slideshow{
 
-        height:250px;
+        height:260px;
 
     }
 
-    main{
+    .popup{
 
-        padding:30px 15px;
+        width:92%;
+
+        padding:25px;
 
     }
 
