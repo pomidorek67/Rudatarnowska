@@ -4,26 +4,6 @@
 ========================= */
 
 const images = [
-    "IMG_0076-compressed.jpeg",
-    "IMG_1774-compressed.jpeg",
-    "IMG_2565-compressed.jpeg",
-    "IMG_2669-compressed.jpeg",
-    "IMG_2779-compressed.jpeg",
-    "IMG_3011-compressed.jpeg",
-    "IMG_3263-compressed.jpeg",
-    "IMG_3297-compressed.jpeg",
-    "IMG_3493-compressed.jpeg",
-    "IMG_3497-compressed.jpeg",
-    "IMG_5082-compressed.jpeg",
-    "IMG_5095-compressed.jpeg",
-    "IMG_8285-compressed.jpeg",
-    "IMG_9551-compressed.jpeg",
-  
-];
-
-let index = 0;
-
-const images = [
 
  "IMG_0076-compressed.jpeg",
     "IMG_1774-compressed.jpeg",
@@ -66,8 +46,7 @@ setInterval(()=>{
 
 },3000);
 /* start slideshow */
-changeBackground();
-setInterval(changeBackground, 3000);
+
 
 
 /* =========================
