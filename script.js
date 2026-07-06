@@ -23,19 +23,49 @@ const images = [
 
 let index = 0;
 
-const bg = document.getElementById("background");
+const images = [
 
-function changeBackground() {
-    bg.style.opacity = 0;
+"img/zdjecie1.jpg",
+"img/zdjecie2.jpg",
+"img/zdjecie3.jpg",
+"img/zdjecie4.jpg",
+"img/zdjecie5.jpg",
+"img/zdjecie6.jpg",
+"img/zdjecie7.jpg",
+"img/zdjecie8.jpg",
+"img/zdjecie9.jpg",
+"img/zdjecie10.jpg",
+"img/zdjecie11.jpg",
+"img/zdjecie12.jpg",
+"img/zdjecie13.jpg",
+"img/zdjecie14.jpg",
+"img/zdjecie15.jpg"
 
-    setTimeout(() => {
-        bg.style.backgroundImage = `url('${images[index]}')`;
-        bg.style.opacity = 1;
+];
 
-        index = (index + 1) % images.length;
-    }, 800);
-}
+let current = 0;
 
+const slide = document.getElementById("slideshow");
+
+setInterval(()=>{
+
+    slide.style.opacity=0;
+
+    setTimeout(()=>{
+
+        current++;
+
+        if(current>=images.length){
+            current=0;
+        }
+
+        slide.src=images[current];
+
+        slide.style.opacity=1;
+
+    },600);
+
+},3000);
 /* start slideshow */
 changeBackground();
 setInterval(changeBackground, 3000);
