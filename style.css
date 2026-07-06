@@ -173,3 +173,40 @@ main {
     left: -9999px;
     top: -9999px;
 }
+
+/* ==========================
+   GALERIA ZDJĘĆ
+========================== */
+
+.gallery{
+
+    width:100%;
+    max-width:850px;
+
+    margin:30px auto 0;
+
+    border:3px solid rgba(255,215,0,.7);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 25px rgba(0,0,0,.7);
+
+    background:#111;
+
+}
+
+#slideshow{
+
+    width:100%;
+
+    height:450px;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:opacity 1s ease;
+
+}
