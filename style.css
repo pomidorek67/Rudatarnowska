@@ -26,8 +26,8 @@ body {
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.4) contrast(1.1);
-    transition: opacity 1.5s ease;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 /* =========================
@@ -37,8 +37,7 @@ body {
 .fog {
     position: fixed;
     inset: 0;
-    background: url("https://i.imgur.com/3Xj7Q9V.png");
-    opacity: 0.15;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
     animation: fogMove 20s linear infinite;
     pointer-events: none;
 }
