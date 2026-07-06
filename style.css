@@ -34,13 +34,7 @@ body {
    MGŁA
 ========================= */
 
-.fog {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
-    animation: fogMove 20s linear infinite;
-    pointer-events: none;
-}
+
 
 @keyframes fogMove {
     0% { transform: translateX(0); }
