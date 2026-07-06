@@ -5,9 +5,9 @@
 
 const images = [
     "IMG_5082.jpeg",
-    "IMG_5082.jpeg",
-    "IMG_5082.jpeg",
-    "IMG_5082.jpeg",
+    "IMG_2669.jpeg",
+    "IMG_2779.jpeg",
+    "IMG_3297.jpeg",
     "IMG_5082.jpeg",
     "IMG_5082.jpeg",
     "IMG_5082.jpeg",
